@@ -3,20 +3,6 @@ import { Link } from 'components/Router'
 import Theme from 'theme'
 import styled from 'styled-components'
 
-class Header extends React.Component {
-    render() {
-            return(
-                <Nav>
-                    <NavHeader>
-                        <NavLeft><Link to="/"><img src="/img/corporate-logo.png"/></Link></NavLeft>
-                    </NavHeader>
-                </Nav>
-            );
-    }
-}
-
-export default Header
-
 const Nav = styled.nav`
     background-color: ${Theme.color.black};
     background-color: rgba(15, 15, 17, 0.72);
@@ -50,3 +36,17 @@ const NavLeft = styled.div`
         }
     }
 `
+
+class Header extends React.Component {
+    render() {
+            return(
+                <Nav>
+                    <NavHeader>
+                        <NavLeft><Link to="/"><img src="/img/corporate-logo.png"/></Link></NavLeft>
+                    </NavHeader>
+                </Nav>
+            );
+    }
+}
+
+export default Header
