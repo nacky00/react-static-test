@@ -8,32 +8,6 @@ import { InnerSectionStyle } from 'components/atoms/Section/style';
 import { NewsItem } from 'components/molecules/NewsItem';
 import { SectionHeader } from 'components/atoms/Text/style'
 
-const outputNews = newsData.filter((output) => {
-    return output.target == "all" || "company"
-})
-
-export const NewsSection = props => {
-    return (
-        <Section>
-            <Wrapper>
-                <Header>News</Header>
-                {outputNews.slice(0,4).map((body,key) => {
-                    return(
-                        <NewsItem body={body} key={key}/>
-                    )
-                })}
-                <BottomWrapper>
-                    <MoreButton>
-                        <Link to="/news">
-                            <p>View All</p><img src="/img/icon-arrow-right.png" />
-                        </Link>
-                    </MoreButton>
-                </BottomWrapper>
-            </Wrapper>
-        </Section>
-    )
-}
-
 const Section = styled.section`
     ${InnerSectionStyle};
     background-color: ${Theme.color.black};
@@ -74,3 +48,30 @@ a {
         width: 1.2rem;
     }
 }`
+
+
+const outputNews = newsData.filter((output) => {
+    return output.target == "all" || "company"
+})
+
+export const NewsSection = props => {
+    return (
+        <Section>
+            <Wrapper>
+                <Header>News</Header>
+                {outputNews.slice(0,4).map((body,key) => {
+                    return(
+                        <NewsItem body={body} key={key}/>
+                    )
+                })}
+                <BottomWrapper>
+                    <MoreButton>
+                        <Link to="/news">
+                            <p>View All</p><img src="/img/icon-arrow-right.png" />
+                        </Link>
+                    </MoreButton>
+                </BottomWrapper>
+            </Wrapper>
+        </Section>
+    )
+}

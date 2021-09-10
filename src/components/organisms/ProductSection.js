@@ -8,33 +8,6 @@ import { NormalWrapperStyle } from 'components/atoms/Wrapper/style'
 import { InnerSectionStyle  } from 'components/atoms/Section/style'
 import { SectionHeader } from 'components/atoms/Text/style'
 
-export const ProductSection = props => {
-    return (
-        <Section>
-            <Wrapper>
-            <Header>Product</Header>
-            <Text>観光・飲食系アプリ『 Sassy (サッシー) 』と<br />『 Caviia (キャビア) 』を開発しています。</Text>
-            <Container>
-                <Item>
-                <Image><img src="/img/thumbnail-sassy.png" /><Link to="/sassy" /></Image>
-                    <StoreButtonsContainer>
-                        <AppleButton href={`https://apps.apple.com/jp/app/id1496112424`}/>
-                        <GooglePlayButton href={`https://play.google.com/store/apps/details?id=com.relyontrip.sassy&referrer=utm_source%3Dsassy-lp%26anid%3Dadmob`}/>
-                    </StoreButtonsContainer>
-                </Item>
-                <Item>
-                    <Image><img src="/img/thumbnail-caviia.png" /><Link to="" /></Image>
-                    <StoreButtonsContainer>
-                        <AppleButton />
-                        <GooglePlayButton />
-                    </StoreButtonsContainer>
-                </Item>
-            </Container>
-            </Wrapper>
-        </Section>
-    )
-}
-
 const Section = styled.section`
     ${InnerSectionStyle};
     background-color: ${Theme.color.white};
@@ -111,3 +84,30 @@ const Image = styled.div`
         height: 100%;
     }
 `
+
+export const ProductSection = props => {
+    return (
+        <Section>
+            <Wrapper>
+            <Header>Product</Header>
+            <Text>観光・飲食系アプリ『 Sassy (サッシー) 』と<br />『 Caviia (キャビア) 』を開発しています。</Text>
+            <Container>
+                <Item>
+                <Image><img src="/img/thumbnail-sassy.png" /><Link to="/sassy" /></Image>
+                    <StoreButtonsContainer>
+                        <AppleButton href={`https://apps.apple.com/jp/app/id1496112424`}/>
+                        <GooglePlayButton href={`https://play.google.com/store/apps/details?id=com.relyontrip.sassy&referrer=utm_source%3Dsassy-lp%26anid%3Dadmob`}/>
+                    </StoreButtonsContainer>
+                </Item>
+                <Item>
+                    <Image><img src="/img/thumbnail-caviia.png" /><Link to="" /></Image>
+                    <StoreButtonsContainer>
+                        <AppleButton />
+                        <GooglePlayButton />
+                    </StoreButtonsContainer>
+                </Item>
+            </Container>
+            </Wrapper>
+        </Section>
+    )
+}
