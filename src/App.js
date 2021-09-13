@@ -15,6 +15,7 @@ addPrefetchExcludes(['dynamic'])
 function App() {
   return (
     <React.Suspense fallback={<em>Loading...</em>}>
+      <script> </script>
       <Root>
         <Header />
         <div>
