@@ -11,8 +11,8 @@ export default () => (
   <div>
     <Meta description={`株式会社RelyonTrip（リリオントリップ）のコーポレートサイトです。`} url={`https://relyontrip.com`}/>
     <MainVisual>
-      <MainMovie autoPlay="true" loop="true" muted="true" playsInline>
-        <source src="/movie/top.mp4" type="video/mp4"/>
+      <MainMovie autoPlay={true} loop={true} muted={true} playsInline>
+        <source src={"/movie/top.mp4"} type={"video/mp4"} />
       </MainMovie>
     </MainVisual>
     <Contents>
