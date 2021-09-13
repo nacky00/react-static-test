@@ -4,8 +4,10 @@ import { Link, Router, useLocation } from 'components/Router'
 import Dynamic from 'containers/Dynamic'
 import Footer from 'components/organisms/Footer'
 import Header from 'components/organisms/Header'
+import { useEffect } from 'react'
 
 import './app.css'
+import './styles.css'
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
 addPrefetchExcludes(['dynamic'])
@@ -13,18 +15,29 @@ addPrefetchExcludes(['dynamic'])
 
 
 function App() {
+  useEffect(() => {
+    let domReady = (cb) => {
+      document.readyState === 'interactive' || document.readyState === 'complete'
+        ? cb()
+        : document.addEventListener('DOMContentLoaded', cb);
+    };
+    
+    domReady(() => {
+      // Display body when DOM is loaded
+      document.body.style.visibility = 'visible';
+      console.log("visible")
+    });
+
+  })
   return (
     <React.Suspense fallback={<em>Loading...</em>}>
-      <script> </script>
       <Root>
         <Header />
-        <div>
           <ScrollToTop />
             <Router>
               <Dynamic path="dynamic" />
               <Routes path="*" />
             </Router>
-        </div>
         <Footer />
       </Root>
     </React.Suspense>
